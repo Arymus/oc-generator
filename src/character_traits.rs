@@ -1,0 +1,31 @@
+pub const POS_TRAITS: [&str; 13] = [
+    "Adventurous",
+    "Brave",
+    "Charming",
+    "Demure",
+    "Energetic",
+    "Free-spirited",
+    "Gritty",
+    "Handy",
+    "Illuminous",
+    "Joyous",
+    "Kindhearted",
+    "Lucky",
+    "Motherly",
+];
+    
+pub const NEG_TRAITS: [&str; 13] = [
+    "Apathetic",
+    "Brooding",
+    "Cocky",
+    "Dry",
+    "Egotistical",
+    "Flaky",
+    "Gullible",
+    "Hypocritical",
+    "Insufferable",
+    "Judgemental",
+    "Know-it-all",
+    "Loud",
+    "Manipulative",
+];
