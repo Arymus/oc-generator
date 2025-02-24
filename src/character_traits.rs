@@ -29,3 +29,18 @@ pub const NEG_TRAITS: [&str; 13] = [
     "Loud",
     "Manipulative",
 ];
+
+pub const HAIR_COLOR: [&str; 12] = [
+    "Blonde",
+    "Brown",
+    "Black",
+    "Pink",
+    "White",
+    "Gray",
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Blue",
+    "Purple",
+];
