@@ -30,7 +30,7 @@ pub const NEG_TRAITS: [&str; 13] = [
     "Manipulative",
 ];
 
-pub const HAIR_COLOR: [&str; 12] = [
+pub const COLORS: [&str; 12] = [
     "Blonde",
     "Brown",
     "Black",
