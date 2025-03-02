@@ -58,5 +58,5 @@ fn main() {
     gen_traits().0 + ", " + &gen_traits().1,
     gen_traits().0 + ", " + &gen_traits().1); // Print the selected index 3 times
 
-    println!("Hair color: {:?}", gen_color().0 + ", " + &gen_color().1); // Print the selected hair color
+    println!("Hair color: {:?}\nEye color: {:?}", gen_color().0, gen_color().1); // Print the selected hair color
 }
