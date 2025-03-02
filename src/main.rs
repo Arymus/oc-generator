@@ -53,6 +53,10 @@ fn main() {
     let mut input: String = String::new(); // Create a new string
     io::stdin().read_line(&mut input).expect("Failure reading string"); // Read the string and panic with a message if there's an error
 
-    println!("Name: {}Description:\n{:?}, {:?}, {:?}", input, gen_traits(), gen_traits(), gen_traits()); // Print the selected index 3 times
-    println!("Hair color: {:?}", gen_color()); // Print the selected hair color
+    println!("Name: {}Description:\n{:?}, {:?}, {:?}", input,
+    gen_traits().0 + ", " + &gen_traits().1,
+    gen_traits().0 + ", " + &gen_traits().1,
+    gen_traits().0 + ", " + &gen_traits().1); // Print the selected index 3 times
+
+    println!("Hair color: {:?}", gen_color().0 + ", " + &gen_color().1); // Print the selected hair color
 }
