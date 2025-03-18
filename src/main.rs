@@ -6,43 +6,52 @@ use rand::Rng; // Use the rand::Rng crate
 use std::io; // Use the standard input/output crate
 
 fn gen_traits() -> (String, String) {
-    let mut rng = rand::rng(); 
-    let mut pos_string: Vec<String> = Vec::new(); // Defines an empty vec for containing strings
-    let mut neg_string: Vec<String> = Vec::new();
+    let mut rng = rand::rng(); // Apparently this function doesn't exist, but it works so... 
+    let mut pos_string: Vec<String> = Vec::new(); // Defines an empty vec for containing strings, specifically negative traits
+    let mut neg_string: Vec<String> = Vec::new(); // Defines an empty vec for contaning strings, specifically positive traits
 
-    // For every item in the POS_TRAITS array, convert to a string and add it to the traits_string vector
+    // For every item in the POS_TRAITS array (character_traits.rs), convert to a string and add it to the traits_string vector
     for pos in &POS_TRAITS {
-        pos_string.push(pos.to_string());
+        pos_string.push(pos.to_string()); // Add the positive traits to the pos_traits vector
     }
 
-    // For every item in the NEG_TRAITS array, convert to a string and add it to the traits_string vector
+    // For every item in the NEG_TRAITS array (character_traits.rs), convert to a string and add it to the traits_string vector
     for neg in &NEG_TRAITS {
-        neg_string.push(neg.to_string());
+        neg_string.push(neg.to_string()); // Add the negative character traits to the neg_traits vector
     }
 
     // Select a random number between 0 and 12
-    let pos_selection : usize= rng.random_range(0..=12);
-    let neg_selection: usize = rng.random_range(0..=12);
+    let pos_selection: usize= rng.random_range(0..=12); // Random number between 0 and 12, including 12
+    let neg_selection: usize = rng.random_range(0..=12); // Random number between 0 and 12, including 12
+
+    // Assign the selected numbers to a variable
+    let pos_final: String = pos_string[pos_selection].clone();
+    let neg_final: String = neg_string[neg_selection].clone();
 
     // Return the result of positive and negative traits as a tuple
-    return ( pos_string[pos_selection].clone(), neg_string[neg_selection].clone() );
+    return ( pos_final, neg_final );
 }
 
+// Initializes a function that returns a tuple of two strings
 fn gen_color() -> (String, String) {
-    let mut rng = rand::rng(); 
-    let mut hair_colors: Vec<String> = Vec::new(); // Defines an empty vec for containing strings
-    let mut eye_colors: Vec<String> = Vec::new();
+    let mut rng = rand::rng();  // Apparently this function doesn't exist, but it works so...
+    let mut hair_colors: Vec<String> = Vec::new(); // Defines an empty vector for containing strings, specifically hair colors
+    let mut eye_colors: Vec<String> = Vec::new(); // Defines an empty vector for containining strings, specifically eye colors
 
-    // For each color in the HAIR_COLOR array, parse each index to a string an add it to the hair_colors vec
+    // For each color in the COLORS array (character_traits.rs)
     for color in &COLORS {
-        hair_colors.push(color.to_string());
-	eye_colors.push(color.to_string());
+        hair_colors.push(color.to_string()); // Convert the color to a string and add it to the hair_colors vector
+	eye_colors.push(color.to_string()); // Convert the color to a string and add it to the eye_color vector
     }
 
+    // Randomly select hair and eye colors
     let hair_color_selection: usize = rng.random_range(0..=hair_colors.len() - 1); // Pick a random number between 0 and the last index of the hair_colors array
-    let eye_color_selection: usize = rng.random_range(0..=eye_colors.len() - 1); // Generates a random number between 0 and the final index of the eye_colors array
+    let eye_color_selection: usize = rng.random_range(0..=eye_colors.len() - 1); // Generates a random number between 0 and the last index of the eye_colors array
 
-    return ( hair_colors[hair_color_selection].clone(), eye_colors[eye_color_selection].clone() ); // Return the randomly selected hair and eye color
+    // Define the selected hair and eye colors
+    let hair_color_final: String = hair_colors[hair_color_selection].clone();
+    let eye_color_final: String = eye_colors[eye_color_selection].clone();
+    return ( hair_color_final, eye_color_final  );
 }
 
 fn main() {
